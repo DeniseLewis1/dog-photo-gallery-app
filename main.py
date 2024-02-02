@@ -34,5 +34,8 @@ def get_random():
   dog_images = [data["message"]]
   return render_template("dogs.html", images=dog_images)
 
-app.debug = True
-app.run(host='0.0.0.0', port=8080)
+#app.debug = True
+#app.run(host='0.0.0.0', port=8080)
+
+if __name__ == '__main__':
+  app.run(debug=True, port=os.getenv("PORT", default=5000))
